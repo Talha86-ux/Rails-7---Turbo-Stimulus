@@ -1,0 +1,11 @@
+<%= turbo_frame_tag @task do %>
+
+  <h2>Edit Task</h2>
+
+  <%= render "form", task: @task %>
+
+  <br>
+
+  <%= link_to "Cancel", tasks_path %>
+
+<% end %>

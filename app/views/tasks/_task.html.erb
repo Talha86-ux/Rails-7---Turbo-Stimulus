@@ -1,0 +1,22 @@
+<%= turbo_frame_tag task do %>
+  <div style="border:1px solid #ddd;padding:15px;margin-bottom:10px;">
+
+    <h3><%= task.title %></h3>
+
+    <p><%= task.description %></p>
+
+    <p>
+      Status:
+      <%= task.completed ? "✅ Completed" : "❌ Pending" %>
+    </p>
+
+    <%= link_to "Show", task %>
+
+    <%= link_to "Edit", edit_task_path(task) %>
+
+    <%= button_to "Delete", task,
+          method: :delete %>
+
+  </div>
+
+<% end %>

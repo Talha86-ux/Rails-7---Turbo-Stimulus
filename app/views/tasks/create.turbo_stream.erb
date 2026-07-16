@@ -1,0 +1,9 @@
+<%= turbo_stream.append "tasks" do %>
+  <%= render @task %>
+<% end %>
+
+<%= turbo_stream.replace "new_task" do %>
+  <%= turbo_frame_tag "new_task" do %>
+    <%= link_to "New Task", new_task_path, data: { turbo_frame: "new_task" }, class: "btn btn-primary" %>
+  <% end %>
+<% end %>

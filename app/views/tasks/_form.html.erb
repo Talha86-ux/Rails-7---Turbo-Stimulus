@@ -16,9 +16,18 @@
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div data-controller="character-counter">
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description,
+        rows: 4,
+        data: {
+          character_counter_target: "input",
+          action: "input->character-counter#updateCounter"
+        } %>
+    <%= tag.span "0",
+        data: {
+          character_counter_target: "count"
+        } %>
   </div>
 
   <div>

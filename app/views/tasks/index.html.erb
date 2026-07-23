@@ -4,7 +4,8 @@
 
 <div id="tasks">
   <% @tasks.each do |task| %>
-    <%= render task %>
+    <%=  render task %>
+    <%=  task.comments %>
     <p>
       <%= link_to "Show this task", task %>
     </p>
